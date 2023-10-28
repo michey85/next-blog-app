@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,7 +14,7 @@
     "@types/react-dom": "18.2.4",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
-    "next": "13.4.2",
+    "next": "14.0.0",
     "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,5 +25,8 @@
   "devDependencies": {
     "concurrently": "^8.2.0",
     "json-server": "^0.17.3"
+  },
+  "volta": {
+    "node": "18.17.1"
   }
 }

@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Blog | Next App",
 };
 
+export const revalidate = 10;
+
 export default async function Blog() {
   const posts = await getAllPosts();
 
