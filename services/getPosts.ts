@@ -1,5 +1,5 @@
 export const getAllPosts = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");;
+  const response = await fetch("http://localhost:3300/posts");
 
   if (!response.ok) throw new Error("Unable to fetch posts.");
 
@@ -8,7 +8,8 @@ export const getAllPosts = async () => {
 
 export const getPostById = async (id: string) => {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
+    `http://localhost:3300/posts/${id}`,
+    { headers: { 'Content-type': 'application/json' } }
   );
 
   if (!response.ok) throw new Error("Unable to fetch post.");

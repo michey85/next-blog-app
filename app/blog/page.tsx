@@ -14,6 +14,7 @@ export default async function Blog() {
   return (
     <>
       <h1>Blog page</h1>
+      <Link href="/blog/new">Add new post</Link>
       <ul>
         {posts.map((post: any) => (
           <li key={post.id}>
