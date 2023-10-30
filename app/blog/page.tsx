@@ -1,5 +1,7 @@
+import NewPostForm from "@/components/NewPostForm";
 import { getAllPosts } from "@/services/getPosts";
 import { Metadata } from "next";
+import { revalidatePath } from "next/cache";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -22,6 +24,15 @@ export default async function Blog() {
           </li>
         ))}
       </ul>
+
+      <hr />
+
+      <NewPostForm
+        onSuccess={async () => {
+          "use server";
+          revalidatePath("/blog");
+        }}
+      />
     </>
   );
 }
