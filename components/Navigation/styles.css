@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav__link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+}
