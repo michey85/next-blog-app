@@ -3,9 +3,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 async function updatePost(data: FormData) {
@@ -27,7 +27,13 @@ async function updatePost(data: FormData) {
   redirect(`/blog/${post.id}`);
 }
 
-export default async function Profile({ params: { id } }: Props) {
+export default async function Profile(props: Props) {
+  const params = await props.params;
+
+  const {
+    id
+  } = params;
+
   const post = await getPostById(id);
 
   return (
